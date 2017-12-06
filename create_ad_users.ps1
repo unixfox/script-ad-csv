@@ -65,10 +65,10 @@ Function Create-Users
 {
   "Processing started (on " + $date + "): " | Out-File $log -append
   "--------------------------------------------" | Out-File $log -append
-  Import-CSV $newpath | ForEach-Object {
+  Import-CSV $newpath -Encoding UTF8 | ForEach-Object {
     If (($_.Implement.ToLower()) -eq "yes")
     {
-      If (($_.GivenName -eq "") -Or ($_.LastName -eq "") -Or ($_.Group -eq ""))
+      If (($_.GivenName -eq "") -Or ($_.LastName -eq "") -Or ($_.Group -eq "") -Or ($_.ProfilePath -eq "") -Or ($_.PasswordNeverExpires -eq "") -Or ($_.Enabled -eq ""))
       {
         Write-Host "[ERROR]`t Please provide valid GivenName, LastName and Group. Processing skipped for line $($i)`r`n"
         "[ERROR]`t Please provide valid GivenName, LastName and Group. Processing skipped for line $($i)`r`n" | Out-File $log -append
@@ -229,7 +229,7 @@ Function Delete-Users
   $listUsers = get-aduser @ADUserParams | select-object @SelectParams | ForEach{
     $userexist = $false
     $user = $_.SAMAccountname
-    Import-CSV $newpath | ForEach-Object{
+    Import-CSV $newpath -Encoding UTF8 | ForEach-Object{
       $replaceName = $_.Lastname.Replace(".","")
       If($replaceName.length -lt 4)
       {
