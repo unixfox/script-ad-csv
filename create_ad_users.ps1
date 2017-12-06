@@ -2,7 +2,7 @@
 # AUTHOR  : Emilien Devos - Marius / Hican 
 # DATE    : 26-04-2012 
 # EDIT    : 04-12-2017
-# COMMENT : This script creates new Active Directory users,
+# COMMENT : This script creates, updates and removes Active Directory users,
 #           including different kind of properties, based
 #           on an input_create_ad_users.csv.
 # VERSION : 1.4
@@ -20,6 +20,7 @@
 # - Added functionality for ProxyAddresses
 # Version 1.4: 04-12-2017
 # - Removing useless fields
+# - Add ability to update and delete users automatically
 
 # TODO
 # - Ability to add multiple groups
