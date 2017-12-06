@@ -1,3 +1,46 @@
 Implement,GivenName,LastName,ProfilePath,Password,Group,PasswordNeverExpires,Enabled
-Yes,Prenom,Nomtest,\\profile\path,Azerty123-,Professeurs,False,True
-Yes,Jeanmich,Yuiop,\\profile\path,Azerty123-,Etudiants,False,True
+Yes,Adrien,Delcour,\,9q3uj,6TTR,False,True
+Yes,Nicolas,Artiel,\,5ehmp,7PB,False,True
+Yes,Rémy,Choteau,\,qyn5d,7PB,False,True
+Yes,Maxime,Leman,\,zn3ps,7PBT,False,True
+Yes,Alexandre,Payen,\,8tnsi,7PBT,False,True
+Yes,Rémy,Andre,\,eg6wg,7PBT,False,True
+Yes,Jérôme,Bossut,\,z3hol,7PBT,False,True
+Yes,Victor,Delcroix,\,9sn3s,7PBT,False,True
+Yes,Antonin,Delhaye,\,z9him,7PBT,False,True
+Yes,Antoine,De Rouck,\,3sfof,7PBT,False,True
+Yes,Thomas,Desobry,\,9shyu,7PBT,False,True
+Yes,Fabian,Guns,\,9tkps,7PBT,False,True
+Yes,Bryan,Himpe,\,smp5d,7PBT,False,True
+Yes,Florentin,Maquet,\,p8d2h,7PBT,False,True
+Yes,Kevin,Devolder,\,9spc3,7PG,False,True
+Yes,Jason,Hempte,\,9smp2,7PG,False,True
+Yes,Kevin,Hempte,\,dpz9x,7PG,False,True
+Yes,Maxime,Leclercq,\,emp5s,7PG,False,True
+Yes,Simon,Nicolas,\,jvue1,7PG,False,True
+Yes,Arnaud,Rigault,\,spm54,7PG,False,True
+Yes,Ludovic,Rousseau,\,d9gfh,7PG,False,True
+Yes,Louis Guillio,Tickfine,\,lsox6,7PG,False,True
+Yes,Sami,Vandiest,\,dpa3s,7PG,False,True
+Yes,Alex,Battisti,\,k923q,7PE,False,True
+Yes,Anthony,Beranger,\,4x2r7,7PE,False,True
+Yes,Florian,Brasme,\,32k7m,7PE,False,True
+Yes,Jérémy,Cherubin,\,42gb9,7PE,False,True
+Yes,Benoit,Clement,\,78ke7,7PE,False,True
+Yes,Thomas,Coppenolle,\,8e9w8,7PE,False,True
+Yes,Arnaud,Delneste,\,3t24v,7PE,False,True
+Yes,Sylvain,Hespel,\,4k66f,7PE,False,True
+Yes,Kevin,Lefebvre,\,r759b,7PE,False,True
+Yes,Sirous,Lotfi,\,s828r,7PE,False,True
+Yes,Justin,Moriau,\,422zi,7PE,False,True
+Yes,Cyril,Remoleux,\,j4x84,7PE,False,True
+Yes,Nicolas,Deryckere,\,a4e83,7Pi,False,True
+Yes,Jocelyn,Farvacque,\,59m6h,7Pi,False,True
+Yes,Noman,Chekairi,\,35y8g,7PS,False,True
+Yes,Julien,Descamps,\,874qx,7PS,False,True
+Yes,Jérémie,Fockedey,\,7k43j,7PS,False,True
+Yes,Nicolas,Mahieu,\,45fx5,7PS,False,True
+Yes,Suelton,Silva de Andrade,\,53bu3,7PS,False,True
+Yes,Daniel,Soto reyes,\,5e53b,7PS,False,True
+Yes,Maxime,Vanmoorleghem,\,5nn63,7PS,False,True
+Yes,Alhan,Vanthomme,\,k89s5,7PS,False,True
