@@ -1,0 +1,3 @@
+Implement,GivenName,LastName,ProfilePath,Password,Group,PasswordNeverExpires,Enabled
+Yes,Prenom,Nomtest,\\profile\path,Azerty123-,Professeurs,False,True
+Yes,Jeanmich,Yuiop,\\profile\path,Azerty123-,Etudiants,False,True
