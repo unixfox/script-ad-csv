@@ -61,6 +61,10 @@ Function Start-Commands
   Delete-Users
 }
 
+#----------------------------------------------------------
+#FUNCTION Create and update users
+#----------------------------------------------------------
+
 Function Create-Users
 {
   "Processing started (on " + $date + "): " | Out-File $log -append
@@ -171,6 +175,8 @@ Function Create-Users
 
           Try
           {
+
+            # Updating user using the values from the CSV file
             Write-Host "[INFO]`t User already exist, updating user : $($sam)"
             "[INFO]`t User already exist, updating : $($sam)" | Out-File $log -append
             Set-ADUser $sam -GivenName $_.GivenName `
@@ -178,10 +184,14 @@ Function Create-Users
             -UserPrincipalName ($sam + "@" + $dnsroot) `
             -profilePath $_.ProfilePath `
             -Enabled $enabled -PasswordNeverExpires $expires
+
+            # Changing the password of the user according to the CSV file
             Set-ADAccountPassword $sam -NewPassword $setpass
             Write-Host "[INFO]`t Updated user : $($sam)"
             "[INFO]`t Updated user : $($sam)" | Out-File $log -append
             
+            # If his group has changed on the CSV, deleting his old group and adding to the new group.
+
             $secondgroup = Get-ADPrincipalGroupMembership $sam | select name | select -Index 1 | Select -ExpandProperty "name"
             if ($secondgroup -ne $_.Group)
             {
@@ -213,6 +223,10 @@ Function Create-Users
   "--------------------------------------------" + "`r`n" | Out-File $log -append
 }
 
+#-----------------------------------------------------------
+#FUNCTION Delete users that doesn't exist anymore in the CSV
+#-----------------------------------------------------------
+
 Function Delete-Users
 {
   $ADUserParams=@{ 
@@ -226,9 +240,11 @@ Function Delete-Users
    'Property' = 'SAMAccountname' 
   } 
  
+  # Getting a list of users from the specified OU (Searchbase)
   $listUsers = get-aduser @ADUserParams | select-object @SelectParams | ForEach{
     $userexist = $false
     $user = $_.SAMAccountname
+    # Importing the CSV
     Import-CSV $newpath -Encoding UTF8 | ForEach-Object{
       $replaceName = $_.Lastname.Replace(".","")
       If($replaceName.length -lt 4)
@@ -253,9 +269,11 @@ Function Delete-Users
       $sam = $lastname + $givenname.ToUpper()
       if ($sam -eq $user)
       {
+        # Setting userexist var if the user exist.
         $userexist = $true
       }
     }
+    # If the var userexist is set to false, removing the user.
     if ($userexist -eq $false)
     {
       Remove-ADUser $user -Confirm:$false
